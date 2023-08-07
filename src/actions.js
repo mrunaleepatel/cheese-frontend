@@ -26,7 +26,7 @@ export const updateAction = async ({request, params}) => {
         countryOfOrigin: formData.get("countryOfOrigin"),
         image: formData.get("image"),
     }
-    await fetch(`${baseUrl}/cheeses/${params.id}`, {
+    await fetch(`${baseUrl}/cheeses/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -38,7 +38,7 @@ export const updateAction = async ({request, params}) => {
 
 export const deleteAction = async ({params}) => {
     const id = params.id;
-    await fetch(`${baseUrl}/cheeses/${params.id}`, {
+    await fetch(`${baseUrl}/cheeses/${id}`, {
             method: "DELETE"
         })
         return redirect("/");
