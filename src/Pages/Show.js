@@ -1,25 +1,25 @@
 import { useLoaderData, Form } from "react-router-dom";
 
 function Show(props){
-    const cheeses = useLoaderData()
+    const cheese = useLoaderData()
 
     return (
-        <div className="cheeses">
-            <h1>{cheeses.name}</h1>
-            <h2>{cheeses.countryOfOrigin}</h2>
-            <img src={cheeses.image} alt={cheeses.name}/>
+        <div className="cheese">
+            <h1>{cheese.name}</h1>
+            <h2>{cheese.countryOfOrigin}</h2>
+            <img src={cheese.image} alt={cheese.name}/>
 
-            <h2>Update {cheeses.name}</h2>
+            <h2>Update {cheese.name}</h2>
             <Form action={`/update/${cheeses.id}`} method="post">
                 <input type="text" name="name" placeholder="cheese name" />
                 <input type="text" name="countryOfOrigin" placeholder="country of origin" />
                 <input type="text" name="image" placeholder="image url" />
-                <input type="submit" value={`update ${cheeses.name}`}/>
+                <input type="submit" value={`update ${cheese.name}`}/>
             </Form>
 
             <h2>Delete Cheese</h2>
-            <Form action={`/delete/${cheeses.id}`} method="post">
-                <input type="submit" value={`delete ${cheeses.name}`}/>
+            <Form action={`/delete/${cheese.id}`} method="post">
+                <input type="submit" value={`delete ${cheese.name}`}/>
             </Form>
         </div>
     )

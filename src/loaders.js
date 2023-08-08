@@ -1,12 +1,13 @@
 import {baseUrl} from './base_url'
 
-export const cheeseLoader = async () => {
-    const response = await fetch(baseUrl + '/cheese')
-    const cheese = await response.json();
-    return cheese
+export const cheesesLoader = async () => {
+    const response = await fetch(`${baseUrl}/cheeses`)
+    const cheeses = await response.json();
+    return cheeses
 }
-export const cheesesLoader = async ({params}) => {
-    const response = await fetch(baseUrl + '/cheeses/' + params.id)
+export const cheeseLoader = async ({params}) => {
+    const id = params.id
+    const response = await fetch(`${baseUrl}/cheeses/${id}`)
     const cheese = await response.json();
     return cheese
 }

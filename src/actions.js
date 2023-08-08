@@ -3,17 +3,17 @@ import { baseUrl } from "./base_url";
 
 export const createAction = async ({request}) => {
     const formData = await request.formData();
-    const newCheeses = {
+    const newCheese = {
         name: formData.get("name"),
         countryOfOrigin: formData.get("countryOfOrigin"),
         image: formData.get("image"),
     }
-    await fetch(`${baseUrl}/cheeses`, {
+    await fetch(`${baseUrl}/cheese`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-            body: JSON.stringify(newCheeses)
+        body: JSON.stringify(newCheese)
     })
     return redirect("/");
 }
@@ -21,24 +21,24 @@ export const createAction = async ({request}) => {
 export const updateAction = async ({request, params}) => {
     const id = params.id;
     const formData = await request.formData();
-    const updatedCheeses = {
+    const updatedCheese = {
         name: formData.get("name"),
         countryOfOrigin: formData.get("countryOfOrigin"),
         image: formData.get("image"),
     }
-    await fetch(`${baseUrl}/cheeses/${id}`, {
+    await fetch(`${baseUrl}/cheese/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(updatedCheeses)
+        body: JSON.stringify(updatedCheese)
     })
     return redirect("/");
 }
 
 export const deleteAction = async ({params}) => {
     const id = params.id;
-    await fetch(`${baseUrl}/cheeses/${id}`, {
+    await fetch(`${baseUrl}/cheese/${id}`, {
             method: "DELETE"
         })
         return redirect("/");
