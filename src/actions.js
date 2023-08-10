@@ -8,7 +8,7 @@ export const createAction = async ({request}) => {
         countryOfOrigin: formData.get("countryOfOrigin"),
         image: formData.get("image"),
     }
-    await fetch(`${baseUrl}/cheese`, {
+    await fetch(`${baseUrl}/cheeses`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -26,7 +26,7 @@ export const updateAction = async ({request, params}) => {
         countryOfOrigin: formData.get("countryOfOrigin"),
         image: formData.get("image"),
     }
-    await fetch(`${baseUrl}/cheese/${id}`, {
+    await fetch(`${baseUrl}/cheeses/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -38,7 +38,7 @@ export const updateAction = async ({request, params}) => {
 
 export const deleteAction = async ({params}) => {
     const id = params.id;
-    await fetch(`${baseUrl}/cheese/${id}`, {
+    await fetch(`${baseUrl}/cheeses/${id}`, {
             method: "DELETE"
         })
         return redirect("/");

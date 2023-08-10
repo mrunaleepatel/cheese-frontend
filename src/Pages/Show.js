@@ -10,7 +10,7 @@ function Show(props){
             <img src={cheese.image} alt={cheese.name}/>
 
             <h2>Update {cheese.name}</h2>
-            <Form action={`/update/${cheeses.id}`} method="post">
+            <Form action={`/update/${cheese.id}`} method="post">
                 <input type="text" name="name" placeholder="cheese name" />
                 <input type="text" name="countryOfOrigin" placeholder="country of origin" />
                 <input type="text" name="image" placeholder="image url" />

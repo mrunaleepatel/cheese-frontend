@@ -14,7 +14,7 @@ function Index(props){
             </Form>
         {cheeses.map((cheese, index) => {
             return (
-                 <div key={cheeses.id} className="cheeses">
+                 <div key={cheese.id} className="cheeses">
             <Link to={`/cheese/${cheese.id}`}>
                 <h1>{cheese.name}</h1>
             </Link>
