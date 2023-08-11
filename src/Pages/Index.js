@@ -13,9 +13,10 @@ function Index(props){
                 <input type="submit" value="create cheese" />
             </Form>
         {cheeses.map((cheese, index) => {
+            console.log(cheese)
             return (
-                 <div key={cheese.id} className="cheeses">
-            <Link to={`/cheese/${cheese.id}`}>
+                 <div key={cheese._id} className="cheeses">
+            <Link to={`/${cheese._id}`}>
                 <h1>{cheese.name}</h1>
             </Link>
             <img src={cheese.image} alt={cheese.name} />
